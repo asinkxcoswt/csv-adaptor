@@ -12,6 +12,9 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+import java.time.Instant;
+import java.time.temporal.ChronoUnit;
+
 @SpringBootApplication
 public class CsvAdaptorApplication implements CommandLineRunner {
 	private static Logger LOG = LoggerFactory.getLogger(CsvAdaptorApplication.class);
@@ -28,12 +31,18 @@ public class CsvAdaptorApplication implements CommandLineRunner {
 	@Value("${output-format:json}")
 	private String outputFormat;
 
+	@Value("${parallel:false}")
+	private boolean parallel;
+
 	@Autowired
 	private RecordTypeRegistry recordTypeRegistry;
 
 	public static void main(String[] args) {
 		LOG.info("STARTING THE APPLICATION");
+		Instant startTime = Instant.now();
 		SpringApplication.run(CsvAdaptorApplication.class, args);
+		Instant endTime = Instant.now();
+		LOG.info("Elapse (seconds): " + ChronoUnit.SECONDS.between(startTime, endTime));
 		LOG.info("APPLICATION FINISHED");
 	}
 
@@ -72,6 +81,7 @@ public class CsvAdaptorApplication implements CommandLineRunner {
 		ErrorReporter errorReporter = new TxtErrorReporter(this.outputDir);
 
 		CsvProcessor csvProcessor = new CsvProcessor(this.inputFile, outputGenerator, errorReporter, recordTypeClass);
+		csvProcessor.setParallel(this.parallel);
 
 		csvProcessor.run();
 	}

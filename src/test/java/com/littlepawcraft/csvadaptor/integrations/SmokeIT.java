@@ -19,9 +19,6 @@ public class SmokeIT {
     public static final String INPUT_FILE = "src/test/resources/integration-test-inputs/example.csv";
     public static final String OUTPUT_DIR = "target/integration-test-outputs";
 
-    @Autowired
-    CsvAdaptorApplication codapaymentsCsvParserApplication;
-
     @Test
     void line2ShouldBeGeneratedSuccessfully() {
         String line2Output = FileTestUtil.loadFileAsString(OUTPUT_DIR + "/2.out.json");

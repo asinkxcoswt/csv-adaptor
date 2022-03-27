@@ -12,6 +12,8 @@ import com.opencsv.CSVReaderBuilder;
 import com.opencsv.RFC4180ParserBuilder;
 import com.opencsv.bean.CsvToBean;
 import com.opencsv.bean.CsvToBeanBuilder;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -26,6 +28,10 @@ public class CsvProcessor {
     private OutputGenerator outputGenerator;
     private ErrorReporter errorReporter;
     private Class<? extends Record> recordType;
+
+    @Getter
+    @Setter
+    private boolean parallel = false;
 
     public CsvProcessor(String csvFileLocation, OutputGenerator outputGenerator, ErrorReporter errorReporter, Class<? extends Record> recordType) {
         this.csvFileLocation = csvFileLocation;
@@ -66,7 +72,11 @@ public class CsvProcessor {
                     .withExceptionHandler(this.errorReporter)
                     .build();
 
-            csvToBean.iterator().forEachRemaining(this.outputGenerator::apply);
+            if (this.parallel) {
+                csvToBean.stream().forEach(this.outputGenerator::apply);
+            } else {
+                csvToBean.iterator().forEachRemaining(this.outputGenerator::apply);
+            }
 
             if (reader.getLinesRead() < 2) {
                 throw new InvalidInputFileNoRecordException();
