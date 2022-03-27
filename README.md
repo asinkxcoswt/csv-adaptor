@@ -161,16 +161,16 @@ You can reproduce this result by running as follows
 
 After finished, you can see the execution time for each case in the log. For the memory, you can copy the jstat output from the log and use [this website](http://nix-on.blogspot.com/2015/01/java-jstat-how-to-visualize-garbage.html) to visualize them.
 
-### Single 10k
+### Single Thread 10k
 ![single_10k](./documentation/single_10k.png)
 
-### Parallel 10k
+### Parallel (Thread Pool Size 8) 10k
 ![parallel_10k](./documentation/parallel_10k.png)
 
-### Single 10k
+### Single Thread 100k
 ![single_100k](./documentation/single_100k.png)
 
-### Parallel 10k
+### Parallel (Thread Pool Size 8) 100k
 ![parallel_100k](./documentation/parallel_100k.png)
 
 ```text
