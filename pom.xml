@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.littlepawcraft</groupId>
-	<artifactId>codapayments-csv-parser</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
-	<name>codapayments-csv-parser</name>
-	<description>Copa Payments Assignment Project</description>
+	<artifactId>csv-adaptor</artifactId>
+	<version>1.0</version>
+	<name>csv-adaptor</name>
+	<description>CSV Adaptor</description>
 	<properties>
 		<java.version>17</java.version>
 	</properties>
