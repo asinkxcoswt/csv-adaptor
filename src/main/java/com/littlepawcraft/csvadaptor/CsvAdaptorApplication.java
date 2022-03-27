@@ -13,8 +13,8 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class CodapaymentsCsvParserApplication implements CommandLineRunner {
-	private static Logger LOG = LoggerFactory.getLogger(CodapaymentsCsvParserApplication.class);
+public class CsvAdaptorApplication implements CommandLineRunner {
+	private static Logger LOG = LoggerFactory.getLogger(CsvAdaptorApplication.class);
 
 	@Value("${input-file:}")
 	private String inputFile;
@@ -33,7 +33,7 @@ public class CodapaymentsCsvParserApplication implements CommandLineRunner {
 
 	public static void main(String[] args) {
 		LOG.info("STARTING THE APPLICATION");
-		SpringApplication.run(CodapaymentsCsvParserApplication.class, args);
+		SpringApplication.run(CsvAdaptorApplication.class, args);
 		LOG.info("APPLICATION FINISHED");
 	}
 

@@ -1,6 +1,6 @@
 package com.littlepawcraft.csvadaptor.integrations;
 
-import com.littlepawcraft.csvadaptor.CodapaymentsCsvParserApplication;
+import com.littlepawcraft.csvadaptor.CsvAdaptorApplication;
 import com.littlepawcraft.csvadaptor.utils.FileTestUtil;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,7 +20,7 @@ public class SmokeIT {
     public static final String OUTPUT_DIR = "target/integration-test-outputs";
 
     @Autowired
-    CodapaymentsCsvParserApplication codapaymentsCsvParserApplication;
+    CsvAdaptorApplication codapaymentsCsvParserApplication;
 
     @Test
     void line2ShouldBeGeneratedSuccessfully() {
