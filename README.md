@@ -73,7 +73,14 @@ This is a CSV Adaptor that can convert each line in a specified input csv file t
 ## --output-format
 
 - **Description:** Currently support 2 types, json and xml.
-- **Default Value:** json
+- **Default Value:** `json`
+- **Possible Values:** `json` | `xml`
+
+## --parallel
+
+- **Description:** If `true`, OpenCsv's thread pool implementation is used, otherwise use the single thread implementation.
+- **Default Value:** `false`
+- **Possible Values:** `true` | `false`
 
 # Outputs and errors
 
