@@ -383,4 +383,8 @@ Timestamp           S0C         S1C         S0U         S1U          EC         
 ```
 
 
+# References
 
+### CSV Library Benchmark
+
+- https://github.com/uniVocity/csv-parsers-comparison
