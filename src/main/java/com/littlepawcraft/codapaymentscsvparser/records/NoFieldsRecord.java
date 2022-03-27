@@ -1,4 +1,4 @@
 package com.littlepawcraft.codapaymentscsvparser.records;
 
-public class BaseRecord {
+public class NoFieldsRecord extends Record {
 }

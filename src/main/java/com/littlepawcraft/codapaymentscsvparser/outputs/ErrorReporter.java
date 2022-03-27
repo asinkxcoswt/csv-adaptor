@@ -1,4 +1,6 @@
 package com.littlepawcraft.codapaymentscsvparser.outputs;
 
-public class ErrorReporter {
+import com.opencsv.bean.exceptionhandler.CsvExceptionHandler;
+
+public interface ErrorReporter extends CsvExceptionHandler {
 }

@@ -1,0 +1,6 @@
+foo,desc,stringField,integerNumber,phoneField,emailField
+foo1,valid,hello,1,+660999999999,john@example.com
+foo2,valid,hello,1,+660999999999,john@example.com
+foo3,invalid email,hello,1,+660999999999,invalid@example.co.th.xx.yy
+foo4,invalid phone,hello,1,abc,john@example.com
+foo5,invalid number,hello,abc,+660999999999,john@example.com
