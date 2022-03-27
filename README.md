@@ -135,10 +135,14 @@ Each line in the input file will be parsed into a corresponding file in the outp
    
 # System Components
 
-![df](./documentation/components.drawio.png)
+![system components](./documentation/components.drawio.png)
 
 # Performance
 
+
+
 # Test
 
-# Specification
+![test coverage](./documentation/csv-adaptor-coverage-20220327.png)
+
+![test cases](./documentation/test-result-20220327.png)
